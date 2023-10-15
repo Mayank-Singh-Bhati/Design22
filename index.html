@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="index.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- google fonts link -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Noto Sans", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="max-w-[1920px] w-full m-auto" onresize="resize()">
+    <div
+      id="navbar"
+      class="flex justify-between items-center px-4 md:px-6 lg:px-8 flex-wrap"
+    >
+      <a href="#" id="logoMain" class="flex items-center h-[80px] z-50">
+        <img src="/img/logo.png" alt="logo" class="h-[55px]" />
+        <h1 class="text-3xl">Examr</h1>
+      </a>
+      <div id="menu" class="md:hidden z-50">
+        <!-- Menu bars -->
+        <svg
+          width="50px"
+          height="50px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          id="menuShow"
+          class="h-[30px] w-[30px]"
+          onclick="menuToggle()"
+        >
+          <g id="Menu / Menu_Alt_01">
+            <path
+              id="Vector"
+              d="M12 17H19M5 12H19M5 7H19"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </g>
+        </svg>
+        <!-- Menu Close -->
+        <svg
+          width="50px"
+          height="50px"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          id="menuHide"
+          class="h-[30px] w-[30px] hidden"
+          onclick="menuToggle()"
+        >
+          <g stroke="#000000" stroke-linecap="round" stroke-width="2">
+            <path d="M6 18L18 6" />
+            <path d="M18 18L6 6" />
+          </g>
+        </svg>
+      </div>
+      <div
+        id="navlinks"
+        class="absolute top-0 left-0 hidden bg-white h-[100vh] w-full md:bg-none z-10 text-[14px] items-baseline flex-col gap-7 py-32 px-12 md:flex md:flex-row md:relative md:space-x-10 md:gap-x-4 md:w-fit md:h-fit md:p-0"
+      >
+        <a href="#" class="uppercase z-50 md:z-0">home</a>
+        <a href="#" class="uppercase z-50 md:z-0">about</a>
+        <a href="#" class="uppercase z-50 md:z-0">contact</a>
+        <a href="#" class="uppercase z-50 md:z-0">faq</a>
+        <button
+          type="button"
+          id="nav-web-btn"
+          class="px-3 py-2 bg-black text-white rounded-md"
+        >
+          Examr Web
+          <svg
+            width="50px"
+            height="50px"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            class="inline-block h-[20px] w-[20px]"
+          >
+            <path
+              stroke="#FFFFFF"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6.343 17.657L17.657 6.343m0 0v8.485m0-8.485H9.172"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div
+      id="hero"
+      class="h-fit py-6 md:py-24 px-4 md:px-6 lg:px-14"
+    >
+      <!-- <canvas class="z-0 h-[100%] w-[100%] absolute top-0 left-0"></canvas> -->
+      <div class="hero-content flex flex-col items-center gap-4">
+        <h1
+          class="text-xs md:text-base px-3 py-2 bg-purple-200 rounded-md w-fit font-medium text-[#a05bff]"
+        >
+          Examr - a journey to ace the exams
+        </h1>
+        <p
+          class="uppercase text-lg md:text-3xl w-full md:w-9/12 text-center my-6 font-normal leading-relaxed"
+        >
+          learn more efficiently and effectively with comprehensive study
+          materials and previous year papers.
+        </p>
+
+        <div id="buttons-sections" class="flex gap-4 md:gap-6 md:flex-row flex-col">
+          <button
+            type="button"
+            class="uppercase px-4 w-fit h-[44px] md:text-sm font-medium bg-[#8338ec] rounded-md text-white hover:shadow-lg"
+          >
+            Download app
+            <svg
+              fill="#ffffff"
+              class="inline h-5 w-fit ml-2"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="64px"
+              height="64px"
+              viewBox="0 0 512 512"
+              enable-background="new 0 0 512 512"
+              xml:space="preserve"
+              stroke="#ffffff"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0" />
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke="#CCCCCC"
+                stroke-width="3.072"
+              />
+              <g id="SVGRepo_iconCarrier">
+                <g id="b75708d097f2188dff6617b0f00f7c43">
+                  <path
+                    display="inline"
+                    d="M120.606,169h270.788v220.663c0,13.109-10.628,23.737-23.721,23.737h-27.123v67.203 c0,17.066-13.612,30.897-30.415,30.897c-16.846,0-30.438-13.831-30.438-30.897v-67.203h-47.371v67.203 c0,17.066-13.639,30.897-30.441,30.897c-16.799,0-30.437-13.831-30.437-30.897v-67.203h-27.099 c-13.096,0-23.744-10.628-23.744-23.737V169z M67.541,167.199c-16.974,0-30.723,13.963-30.723,31.2v121.937 c0,17.217,13.749,31.204,30.723,31.204c16.977,0,30.723-13.987,30.723-31.204V198.399 C98.264,181.162,84.518,167.199,67.541,167.199z M391.395,146.764H120.606c3.342-38.578,28.367-71.776,64.392-90.998 l-25.746-37.804c-3.472-5.098-2.162-12.054,2.946-15.525c5.102-3.471,12.044-2.151,15.533,2.943l28.061,41.232 c15.558-5.38,32.446-8.469,50.208-8.469c17.783,0,34.672,3.089,50.229,8.476L334.29,5.395c3.446-5.108,10.41-6.428,15.512-2.957 c5.108,3.471,6.418,10.427,2.946,15.525l-25.725,37.804C363.047,74.977,388.055,108.175,391.395,146.764z M213.865,94.345 c0-8.273-6.699-14.983-14.969-14.983c-8.291,0-14.99,6.71-14.99,14.983c0,8.269,6.721,14.976,14.99,14.976 S213.865,102.614,213.865,94.345z M329.992,94.345c0-8.273-6.722-14.983-14.99-14.983c-8.291,0-14.97,6.71-14.97,14.983 c0,8.269,6.679,14.976,14.97,14.976C323.271,109.321,329.992,102.614,329.992,94.345z M444.48,167.156 c-16.956,0-30.744,13.984-30.744,31.222v121.98c0,17.238,13.788,31.226,30.744,31.226c16.978,0,30.701-13.987,30.701-31.226 v-121.98C475.182,181.14,461.458,167.156,444.48,167.156z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="px-4 h-[44px] border-2 border-[#000000] uppercase rounded-md hover:shadow-lg"
+          >
+            Examr web
+            <svg
+              width="50px"
+              height="50px"
+              viewBox="0 0 24 24"
+              class="h-5 w-fit inline"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+            >
+              <path
+                stroke="#000000"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6.343 17.657L17.657 6.343m0 0v8.485m0-8.485H9.172"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Boost section -->
+    <div id="boost" class="px-4 md:px-6 lg:px-10 mt-4">
+      <div id="boost-content" class="text-center">
+        <h1 class="uppercase text-lg md:text-2xl font-bold">boost</h1>
+        <h3 class="uppercase mb-2 text-base md:text-xl font-semibold">your study</h3>
+        <div class="h-[1px] w-8/12 md:w-6/12 bg-[#727272] m-auto"></div>
+
+        <!-- cards -->
+        <div
+          class="cards flex flex-wrap gap-6 w-[90%] min-w-150px items-center justify-center mx-auto my-6 md:my-10"
+        >
+          <!-- card 1 -->
+          <div
+            class="card1 h-[120px] flex w-fit shadow-md text-left p-2 gap-4 hover:p-0 rounded-md"
+          >
+            <img src="new/notes.svg" alt="" />
+            <div class="flex flex-col justify-around items-left w-[200px]">
+              <h3 class="uppercase text-base font-semibold">free notes</h3>
+              <p class="text-xs md:text-sm text-[#727272]">
+                Get well organized notes in organized trusted by scholars and
+                admins.
+              </p>
+            </div>
+          </div>
+          <!-- card 2 -->
+          <div
+            class="card2 h-[120px] flex w-fit shadow-md text-left p-2 hover:p-0 gap-4 rounded-md"
+          >
+            <img src="new/community.svg" alt="" />
+            <div class="flex flex-col justify-around items-left w-[200px]">
+              <h3 class="uppercase text-base font-semibold">community</h3>
+              <p class="text-xs md:text-sm text-[#727272]">
+                stay tuned with our community posts. Enjoy updates of college &
+                exams.
+              </p>
+            </div>
+          </div>
+          <!-- card 3 -->
+          <div
+            class="card3 h-[120px] flex w-fit shadow-md text-left p-2 hover:p-0 gap-4 rounded-md"
+          >
+            <img src="new/events.svg" alt="" />
+            <div class="flex flex-col justify-around items-left w-[200px]">
+              <h3 class="uppercase text-base font-semibold">Events</h3>
+              <p class="text-xs md:text-sm text-[#727272]">
+                Be part of the events and get experiences from the scholars.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Who is this for -->
+    <div id="defineBox" class="px-4 py-6 md:py-10 md:px-6 lg:px-10 relative">
+      <div class="flex w-full text-center md:text-left justify-center items-center flex-wrap-reverse gap-x-40 gap-y-10">
+        <div id="define-content" class="w-fit md:w-[42%] text-center md:text-left">
+          <h4 class="text-base font-normal">Who is this for?</h4>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-[#C8B6FF] my-3 uppercase">Everyone!</h1>
+          <h1 class="text-xl md:text-3xl font-bold mb-4">THAT'S RIGHT - NO MORE WANDERING WHATSEVER!</h1>
+          <p class="mb-6 text-justify text-sm md:text-lg font-medium text-[#727272]">Examr is an educational platform, offers a diverse range of comprehensive study materials covering crucial exam topics. These resources provide essential knowledge and also cultivate vital skills for academic success.</p>
+          <a href="#" class="px-10 rounded-md py-3 text-center text-white bg-[#C8B6FF] font-semibold text-lg uppercase hover:bg-[#aa8dff]">try now</a>
+        </div>
+        <img src="new/diary.svg" class="h-auto w-8/12 max-w-[400px] md:max-w-[450px]" alt="">
+      </div>
+    </div>
+
+    <!-- Unlock the power of community with Examr! -->
+    <div id="communitySection" class="px-4 py-10 md:py-10 md:px-6 lg:px-10 relative">
+      <div class="flex w-full text-center md:text-left justify-center items-center flex-wrap gap-x-40 gap-y-10">
+        <img src="new/laptop.svg" class="h-fit w-[450px]" alt="">
+        <div id="Community-container" class="w-fit md:w-[42%]">
+          <h4 class="text-base font-normal">Unlock the power of community with Examr!</h4>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-[#C8B6FF] my-3 uppercase">JOIN OUR <span class="text-[#FFBE0B]">COMMUNITY</span></h1>
+          <p class="mb-6 text-justify text-sm md:text-lg font-medium text-[#727272]">Our community is a dynamic hub of support, insights, and opportunities. Whether you're  seeking advice on course, to share your knowledge, Examr is your go-to destination.</p>
+          <a href="#" class="px-10 rounded-md py-3 text-center text-white bg-[#f9cb4c] font-semibold text-lg uppercase hover:bg-[#FFBE0B]">try now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY WE? -->
+    <div id="whyBox" class="px-4 my-10 md:py-10 md:px-6 lg:px-10 relative">
+      <div class="flex w-full text-center md:text-left justify-center items-center flex-wrap-reverse gap-x-40 gap-y-10">
+        <div id="why-content" class="w-fit md:w-[42%] flex flex-col gap-4 items-center">
+          <!-- Notification -->
+          <div class="why-containers">
+            <div class="flex items-center gap-4 mb-3"><img src="/img/notification.svg" class="p-2 bg-[#F8C5A9] rounded-lg" alt="">
+              <h1 class="text-xl md:text-3xl font-bold uppercase">Get <span class="text-[#8338ec]">Notified</span></h1></div>
+            <p class="mb-6 text-justify text-sm md:text-lg font-medium text-[#727272]">Examr's "Get Notified" feature enables students to effortlessly stay updated with instant notifications for document changes and news, streamlining their exam preparation.</p>
+          </div>
+          <!-- Clean UI -->
+          <div class="why-containers">
+            <div class="flex items-center gap-4 mb-3"><img src="/img/ui8.svg" class="p-2 bg-[#DEA9F8] rounded-lg" alt="">
+              <h1 class="text-xl md:text-3xl font-bold uppercase">clean <span class="text-[#8338ec]">UI</span></h1></div>
+            <p class="mb-6 text-justify text-sm md:text-lg font-medium text-[#727272]">Examr's clean UI prioritizes user-friendly navigation, ensuring students can access study materials seamlessly for optimal exam preparation..</p>
+          </div>
+          <!-- Central Hub -->
+          <div class="why-containers">
+            <div class="flex items-center gap-4 mb-3"><img src="/img/hub.svg" class="p-2 bg-[#A9F8B1] rounded-lg" alt="">
+              <h1 class="text-xl md:text-3xl font-bold uppercase">Central <span class="text-[#8338ec]">Hub</span></h1></div>
+            <p class="mb-6 text-justify text-sm md:text-lg font-medium text-[#727272]">Students can access a diverse array of study materials, ranging from comprehensive notes to interactive multimedia resources, all organized intuitively by subject and topic</p>
+          </div>
+        </div>
+        <img src="new/Frame 41.svg" class="h-auto w-8/12 max-w-[450px]" alt="">
+      </div>
+    </div>
+
+    <!-- we cover -->
+    <div id="marquees" class="py-10 px-4 md:px-6 lg:px-10 bg-[#242424] text-center md:text-left">
+      <h1 class="text-white text-2xl md:text-3xl lg:5xl font-extrabold uppercase my-10">we cover</h1>
+      <div class="boxes flex items-center justify-evenly gap-x-20 gap-y-10 flex-wrap">
+        <span class="bg-[#3086ff] text-sm md:text-base lg:text-lg font-bold text-white px-4 py-3 rounded-md">BACHELOR OF COMPUTER APPLICATION</span>
+        <span class="bg-[#BEBEE5] text-sm md:text-base lg:text-lg font-bold text-white px-4 py-3 rounded-md">BACHELOR OF SCIENCE</span>
+        <span class="bg-[#5FD3FA] text-sm md:text-base lg:text-lg font-bold text-white px-4 py-3 rounded-md">BACHELOR OF BUSINESS MANAGEMENT</span>
+        <span class="bg-[#05B7B9] text-sm md:text-base lg:text-lg font-bold text-white px-4 py-3 rounded-md">BACHELOR OF ARTS</span>
+        <span class="bg-[#05B7B9] text-sm md:text-base lg:text-lg font-bold text-white px-4 py-3 rounded-md">BACHELOR OF ARTS</span>
+        <span class="bg-[#FF006E] text-sm md:text-base lg:text-lg font-bold text-white px-4 py-3 rounded-md">BACHELOR OF TECHNOLOGY</span>
+        <span class="bg-[#70ec7c] text-sm md:text-base lg:text-lg font-bold text-white px-4 py-3 rounded-md">MASTER OF COMPUTER APPLICATION</span>
+      </div>
+    </div>
+
+    <!-- members -->
+    <div id="members" class="text-center my-10 md:my-14">
+      <h2 class="uppercase text-base font-light text-[#8338EC] -my-1">our team</h2>
+      <h1 class="uppercase text-2xl font-bold">who we are</h1>
+      <div class="flex flex-wrap flex-row items-center justify-evenly gap-4 md:gap-8 lg:gap-10">
+        <!-- member 1 -->
+        <div class="relative h-fit w-fit scale-75 lg:scale-90 shadow-lg rounded-md shadow-[#777777]">
+          <img src="new/image 1.png" alt="" class="rounded-md">
+          <div class="absolute bottom-0 w-full h-full left-0 bg-none opacity-0 hover:opacity-100 tansition-all duration-200">
+            <div class="absolute bottom-0 w-full left-[50%] translate-x-[-50%] bg-slate-700">
+              <h2 class="text-xl font-bold text-white py-4 h-fit">Gauri Shankar</h2>
+            </div>
+          </div>
+        </div>
+        <!-- member 2 -->
+        <div class="relative h-fit w-fit scale-75 lg:scale-90 shadow-lg rounded-md shadow-[#242424]">
+          <img src="new/image 2.png" alt="" class="rounded-md">
+          <div class="absolute bottom-0 w-full h-full left-0 bg-none opacity-0 hover:opacity-100 tansition-all duration-200">
+            <div class="absolute bottom-0 w-full left-[50%] translate-x-[-50%] bg-slate-700">
+              <h2 class="text-xl font-bold text-white py-4 h-fit">Mayank Singh</h2>
+            </div>
+          </div>
+        </div>
+        <!-- member 3 -->
+        <div class="relative h-fit w-fit scale-75 lg:scale-90 shadow-lg rounded-md shadow-[#242424]">
+          <img src="new/image 3.png" alt="" class="rounded-md">
+          <div class="absolute bottom-0 w-full h-full left-0 bg-none opacity-0 hover:opacity-100 tansition-all duration-200">
+            <div class="absolute bottom-0 w-full left-[50%] translate-x-[-50%] bg-slate-700">
+              <h2 class="text-xl font-bold text-white py-4 h-fit">Himanshu Shakya</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#242424] py-5 px-4 text-white lg:pt-10">
+      <!-- footer top -->
+      <div class="flex flex-wrap gap-10 w-full sm:justify-around">
+        <!-- One -->
+      <div class="flex flex-col gap-5 max-w-[300px]">
+        <div class="flex items-center gap-1">
+          <img src="../img/logo.png" alt="logo" class="h-10">
+          <h1 class="font-bold text-lg lg:text-xl">Examr</h1>
+        </div>
+        <p class="text-white text-xs lg:text-base">Your All-in-One solution for Accessing Study Materials, timely Notifications, Ensuring Exam Excellence.</p>
+        <div class="social-media-icons flex gap-10">
+          <a href="https://www.instagram.com/bmayanksingh/"><img src="../img/instagram.svg" alt="instagram" class="h-7"></a>
+          <a href="#"><img src="../img/android.svg" alt="android" class="h-7"></a>
+          <a href="#"><img src="../img/github.svg" alt="github" class="h-7"></a>
+        </div>
+      </div>
+
+      <!-- Two -->
+      <div class="flex flex-col gap-2">
+        <h4 class="text-lg lg:text-xl">Company</h4>
+        <div class="flex flex-row gap-4 flex-wrap text-xs sm:flex-col sm:text-base">
+          <a href="#">About Us</a>
+          <a href="#">Features</a>
+          <a href="#">Contact Us</a>
+          <a href="#">FAQ</a>
+        </div>
+      </div>
+
+      <!-- Three -->
+      <div class="flex flex-col gap-2">
+        <h4 class="text-lg lg:text-xl">Product</h4>
+        <div class="flex flex-row gap-4 flex-wrap text-xs sm:flex-col sm:text-base">
+          <a href="#">Examr Android App</a>
+          <a href="#">Examr IOS App</a>
+        </div>
+      </div>
+
+      <!-- Four -->
+      <div class="flex flex-col gap-2 max-w-[350px]">
+        <h4 class="text-lg lg:text-xl">Join Our Newsletter</h4>
+        <form action="#" class="flex">
+          <input type="text" placeholder="Email Address" class="px-2 py-3 rounded-l-sm text-sm text-black lg:text-base" required>
+          <input type="submit" value="Subscribe" class="bg-[#793EE5] px-4 py-3 rounded-r-sm text-xs lg:text-base"/>
+        </form>
+        <p class="text-xs text-[#9c9c9c] lg:text-base">We will Send You Updates Monthly, Promo & New Features</p>
+      </div>
+      </div>
+      <!-- footer middle -->
+      <div class="flex flex-wrap gap-x-10 gap-y-4 items-center my-10 w-full justify-center">
+        <a href="#">Post Policy</a>
+        <a href="#">News Policy</a>
+        <a href="#">Terms and Conditions</a>
+      </div>
+      <!-- footer bottom -->
+      <p class="text-xs sm:text-sm text-[#9c9c9c] w-full text-center">2023 © Examr All Rights Reserved</p>
+    </footer>
+    <!-- JavaScript -->
+    <!-- gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="app.js"></script>
+    <script src="gsap.js"></script>
+  </body>
+</html>
